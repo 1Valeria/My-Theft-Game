@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GameActivity"
+    android:weightSum="1">
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scaleType="centerCrop"
+        android:id="@+id/imageViewGameActBckg"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/the_door"
+        android:contentDescription="@string/ResNameGameActBckg" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/ResNameHelloTxt"
+        android:id="@+id/textViewHelloTxt"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginLeft="40dp"
+        android:textSize="20sp"
+        android:textColor="#ffffff"
+        android:background="#b8000000"
+        android:visibility="visible" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/ResName"
+        android:id="@+id/textViewPoints"
+        android:textColor="#ffffff"
+        android:textSize="40sp"
+        android:textIsSelectable="false"
+        android:textStyle="bold"
+        android:shadowColor="#d05ca5f8"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="5"
+        android:visibility="visible"
+        android:padding="10dp"
+        android:autoText="false"
+        android:background="#c1000000"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/scrollView"
+        android:layout_below="@+id/textViewPoints"
+        android:visibility="visible"
+        android:layout_above="@+id/buttonNext">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:id="@+id/layout_stuff"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#c6000000"
+                android:clickable="true"
+                android:id="@+id/layout_gloves"
+                android:paddingTop="5dp">
+
+
+                <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                    android:clickable="false">
+
+                    <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="80dp"
+                    android:id="@+id/imageViewGloves"
+                        android:contentDescription="@string/ResNameImgGloves"
+                        android:src="@mipmap/the_gloves"
+                        android:background="#c2ffffff" />
+                </FrameLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:id="@+id/lin_layout_gloves">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="@string/ResNameGloves"
+                    android:id="@+id/textViewGloves"
+                    android:textColor="#ffffff"
+                    android:shadowColor="#ffffff" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/ResNamePriceGloves"
+                    android:id="@+id/textViewPriceGloves"
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/ResNameDescriptionGloves"
+                    android:id="@+id/textViewDescriptionGloves"
+                    android:textColor="#ffffff" />
+
+            </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left">
+
+                    <Button
+                        style="?android:attr/buttonStyleSmall"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/ResNameBtnGloves"
+                        android:id="@+id/buttonPlusGloves"
+                        android:textSize="40sp"
+                        android:background="#9400c8ff"
+                        android:textColor="#cfffffff" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#c6000000"
+                android:id="@+id/layout_weapon"
+                android:paddingTop="5dp">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp" >
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="80dp"
+                        android:id="@+id/imageViewWeapon"
+                        android:src="@mipmap/the_weapon"
+                        android:background="#c2ffffff"
+                        android:contentDescription="@string/ResNameImgWeapon" />
+                </FrameLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:layout_gravity="bottom">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="@string/ResNameWeapon"
+                        android:id="@+id/textViewWeapon"
+                        android:textColor="#ffffff"
+                        android:shadowColor="#ffffff" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="@string/ResNamePriceWeapon"
+                        android:id="@+id/textViewPriceWeapon"
+                        android:textColor="#ffffff" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="@string/ResNameDescriptionWeapon"
+                        android:id="@+id/textViewDescriptionWeapon"
+                        android:textColor="#ffffff" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left" >
+
+                    <Button
+                        style="?android:attr/buttonStyleSmall"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/ResNameBtnWeapon"
+                        android:id="@+id/buttonPlusWeapon"
+                        android:textSize="40sp"
+                        android:background="#9400c8ff"
+                        android:textColor="#cfffffff"
+                        android:layout_alignParentTop="true" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#c6000000"
+                android:id="@+id/layout_key"
+                android:paddingTop="5dp">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp" >
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="80dp"
+                        android:id="@+id/imageViewKey"
+                        android:src="@mipmap/the_master_key"
+                        android:background="#c2ffffff"
+                        android:contentDescription="@string/ResNameImgWeapon" />
+                </FrameLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="@string/ResNameKey"
+                        android:id="@+id/textViewKey"
+                        android:textColor="#ffffff"
+                        android:shadowColor="#ffffff" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="@string/ResNamePriceKey"
+                        android:id="@+id/textViewPriceKey"
+                        android:textColor="#ffffff" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="@string/ResNameDescriptionKey"
+                        android:id="@+id/textViewDescriptionKey"
+                        android:textColor="#ffffff" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left" >
+
+                    <Button
+                        style="?android:attr/buttonStyleSmall"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/ResNameBtnKey"
+                        android:id="@+id/buttonPlusKey"
+                        android:textSize="40sp"
+                        android:background="#9400c8ff"
+                        android:textColor="#cfffffff"
+                        android:layout_alignParentTop="true" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#c6000000"
+                android:id="@+id/layout_knife"
+                android:paddingTop="5dp">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp" >
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="80dp"
+                        android:id="@+id/imageViewKnife"
+                        android:src="@mipmap/the_knife"
+                        android:background="#c2ffffff"
+                        android:contentDescription="@string/ResNameImgWeapon" />
+                </FrameLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="@string/ResNameKnife"
+                        android:id="@+id/textViewKnife"
+                        android:textColor="#ffffff"
+                        android:shadowColor="#ffffff" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="@string/ResNamePriceKnife"
+                        android:id="@+id/textViewPriceKnife"
+                        android:textColor="#ffffff" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="@string/ResNameDescriptionKnife"
+                        android:id="@+id/textViewdescriptionKey"
+                        android:textColor="#ffffff" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left" >
+
+                    <Button
+                        style="?android:attr/buttonStyleSmall"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/ResNameBtnKnife"
+                        android:id="@+id/buttonPlusKnife"
+                        android:textSize="40sp"
+                        android:background="#9400c8ff"
+                        android:textColor="#cfffffff"
+                        android:layout_alignParentTop="true" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#c6000000"
+                android:id="@+id/layout_dna"
+                android:paddingTop="5dp">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp" >
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="80dp"
+                        android:id="@+id/imageViewDNA"
+                        android:src="@mipmap/the_false_dna"
+                        android:background="#c2ffffff"
+                        android:contentDescription="@string/ResNameImgWeapon" />
+                </FrameLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="@string/ResNameDNA"
+                        android:id="@+id/textViewDNA"
+                        android:textColor="#ffffff"
+                        android:shadowColor="#ffffff" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="@string/ResNamePriceDNA"
+                        android:id="@+id/textViewPriceDNA"
+                        android:textColor="#ffffff" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="@string/ResNameDescriptionDNA"
+                        android:id="@+id/textViewDescriptionDNA"
+                        android:textColor="#ffffff" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left" >
+
+                    <Button
+                        style="?android:attr/buttonStyleSmall"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/ResNameBtnDNA"
+                        android:id="@+id/buttonPlusDNA"
+                        android:textSize="40sp"
+                        android:background="#9400c8ff"
+                        android:textColor="#cfffffff"
+                        android:layout_alignParentTop="true" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#c6000000"
+                android:id="@+id/layout_burger"
+                android:paddingTop="5dp">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp" >
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="80dp"
+                        android:id="@+id/imageViewBurger"
+                        android:src="@mipmap/the_burger"
+                        android:background="#c2ffffff"
+                        android:contentDescription="@string/ResNameImgWeapon" />
+                </FrameLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="@string/ResNameBurger"
+                        android:id="@+id/textViewBurger"
+                        android:textColor="#ffffff"
+                        android:shadowColor="#ffffff" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="@string/ResNamePriceBurger"
+                        android:id="@+id/textViewPriceBurger"
+                        android:textColor="#ffffff" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="@string/ResNameDescriptionBurger"
+                        android:id="@+id/textViewDescriptionBurger"
+                        android:textColor="#ffffff" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left" >
+
+                    <Button
+                        style="?android:attr/buttonStyleSmall"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/ResNameBtnBurger"
+                        android:id="@+id/buttonPlusBurger"
+                        android:textSize="40sp"
+                        android:background="#9400c8ff"
+                        android:textColor="#cfffffff"
+                        android:layout_alignParentTop="true" />
+                </RelativeLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ResNameBtnNext"
+        android:id="@+id/buttonNext"
+        android:background="#bbffffff"
+        android:textColor="#000000"
+        android:layout_gravity="right|bottom"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+</RelativeLayout>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/imageViewLogo"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/ResNameImgTape"
+        android:src="@drawable/crime_scene_logo"
+        android:scaleType="centerCrop"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scaleType="centerCrop"
+        android:id="@+id/imageViewFemida"
+        android:contentDescription="@string/ResNameImg1"
+        android:src="@drawable/femida"
+        android:clickable="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageViewDlr"
+        android:layout_gravity="center_vertical"
+        android:contentDescription="@string/ResNameImgDlr"
+        android:src="@drawable/dollarbutton"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/ResNamePlayBtn1"
+        android:id="@+id/textViewPlay"
+        android:enabled="false"
+        android:textStyle="bold"
+        android:textSize="50sp"
+        android:textIsSelectable="false"
+        android:textColor="#ffffff"
+        android:layout_alignWithParentIfMissing="false"
+        android:layout_alignBottom="@+id/imageViewDlr"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="65dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="@string/ResNameTxtName"
+        android:ems="10"
+        android:id="@+id/editTextPlayerName"
+        android:textStyle="bold"
+        android:textSize="50sp"
+        android:textColor="#ffffff"
+        android:textAlignment="center"
+        android:editable="true"
+        android:background="#a5000000"
+        android:layout_marginBottom="89dp"
+        android:layout_above="@+id/imageViewDlr"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:visibility="invisible" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ResNameBtnOK"
+        android:id="@+id/buttonOK"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="#ffffff"
+        android:background="#dc000000"
+        android:visibility="invisible"
+        android:layout_above="@+id/imageViewDlr"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/ResNameImgTape2"
+        android:id="@+id/textViewEnterName"
+        android:textColor="#ffffff"
+        android:textSize="30sp"
+        android:textIsSelectable="false"
+        android:textStyle="bold"
+        android:layout_above="@+id/editTextPlayerName"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible" />
+
+</RelativeLayout>
