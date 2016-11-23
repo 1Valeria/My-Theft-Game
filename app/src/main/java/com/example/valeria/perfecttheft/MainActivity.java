@@ -1,7 +1,11 @@
 package com.example.valeria.perfecttheft;
 
 import android.app.Activity;
+import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
@@ -26,6 +30,8 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        final DBHelper dbHelper = new DBHelper(this);
+
         Thread t = new Thread(new Runnable() {
             public void run() {
 /////////////// MUSIC /////////////////////
@@ -48,11 +54,19 @@ public class MainActivity extends Activity {
                     @Override
                     public void onClick(View view) {
 
+                        ContentValues cv = new ContentValues();
+                        SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+                        cv.put("name", editTextPlayerName.getText().toString());
+                        // вставляем запись и получаем ее ID
+                        long rowID = db.insert("theftgame", null, cv);
+
                         if (anthemSong.isPlaying())
                             anthemSong.stop();
 
                         Intent intent = new Intent(MainActivity.this, GameActivity.class);
                         intent.putExtra("player_name", editTextPlayerName.getText().toString());
+                        dbHelper.close();
                         startActivity(intent);
 
                     }
@@ -104,6 +118,27 @@ public class MainActivity extends Activity {
             }
         });
         t.start();
+    }
+
+    class DBHelper extends SQLiteOpenHelper {
+
+        public DBHelper(Context context) {
+            // конструктор суперкласса
+            super(context, "theftgame", null, 1);
+        }
+
+        @Override
+        public void onCreate(SQLiteDatabase db) {
+            db.execSQL("create table theftgame ("
+                    + "id integer primary key auto-increment,"
+                    + "name varchar(50)"
+                    + ");");
+        }
+
+        @Override
+        public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+
+        }
     }
 
     // System Back button
